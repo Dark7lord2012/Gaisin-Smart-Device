@@ -1,0 +1,1 @@
+{"version":3,"sources":["variables.scss"],"names":[],"mappings":"AAGA,KACE,sBAHW","file":"style.min.css","sourcesContent":["// Colors\n$cyan: 00b2ff;\n\nbody {\n  background-color: $cyan;\n}\n"]}
