@@ -1,6 +1,7 @@
 @import "blocks/variables.scss";
 @import "blocks/fonts.scss";
 @import "blocks/body.scss";
+@import "blocks/visually-hidden.scss";
 // Шапка
 @import "blocks/header.scss";
 @import "blocks/site-list.scss";
@@ -9,3 +10,4 @@
 @import "blocks/main.scss";
 // Подвал
 @import "blocks/footer.scss";
+@import "blocks/social.scss";

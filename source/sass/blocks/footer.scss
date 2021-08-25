@@ -1,3 +1,171 @@
 .footer {
-  outline: 1px solid darkred;
+  outline: 1px solid #0f0;
+  font-family: "PT Mono", "Courier", monospace;
+  background-color: $back-footer;
+  color: $blue;
+}
+
+.footer__wrapper {
+  max-width: $desktop-width-max + 50px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 60px 25px 14px;
+  outline: 1px solid red;
+  display: grid;
+  grid-template-columns: 30% 45% 25%;
+  // justify-content: center;
+  align-items: flex-start;
+  grid-template-rows: repeat(3, min-content);
+}
+
+.footer__title {
+  margin: 2px 0 24px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.footer__logo-link {
+  display: flex;
+  border: 2px solid red;
+  padding: 0;
+  width: 216px;
+  height: 52px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.footer__social {
+  margin-top: 44px;
+  margin-bottom: 0;
+  grid-column: 1 / 2;
+}
+
+.footer__nav {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  width: 100%;
+  margin-left: -2px;
+  padding-right: 30px;
+  outline: 1px solid green;
+  box-sizing: border-box;
+}
+
+.footer__nav-list {
+  column-count: 2;
+  column-gap: 12px;
+  max-width: 100%;
+  margin: 0 0 0 -2px;
+  padding: 0;
+  list-style: none;
+
+  li {
+    max-width: 100%;
+    width: max-content;
+  }
+
+  a {
+    color: rgba($blue, 0.5);
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 26px;
+    font-weight: 400;
+
+    &:hover,
+    &:focus {
+      color: $blue;
+    }
+
+    &:active {
+      color: rgba($blue, 0.3);
+    }
+  }
+}
+
+.footer__contacts {
+  outline: 1px solid green;
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+
+  li {
+    width: max-content;
+    max-width: 100%;
+  }
+
+  a,
+  address {
+    color: rgba($blue, 0.5);
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 26px;
+    font-weight: 400;
+
+    &:hover,
+    &:focus {
+      color: $blue;
+    }
+
+    &:active {
+      color: rgba($blue, 0.3);
+    }
+  }
+
+  address {
+    font-style: normal;
+  }
+}
+
+.footer__copyright,
+.footer__years,
+.footer__confidence,
+.footer__author {
+  margin-top: 72px;
+  margin-bottom: 0;
+  width: auto;
+
+  font-size: 14px; // не знаю как работает фигма, но если оставить 13px то не совпадает макет по ПП
+  line-height: 24px;
+  color: rgba($blue, 0.5);
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.footer__years {
+  margin-left: -4px; // pixel-perfect
+  padding-right: 20px;
+  width: calc(100% + 35px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  span:last-child {
+    margin-left: 20px;
+    outline: 1px solid red;
+  }
+  // margin-left: -73px;
+}
+
+.footer__confidence {
+  // margin-left: -124px;
+  width: calc(100% - 35px);
+  padding-left: 45px;
+  padding-right: 80px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.footer__author {
+  margin-left: auto;
+  text-align: right;
+  // padding-right: 10px;
 }
