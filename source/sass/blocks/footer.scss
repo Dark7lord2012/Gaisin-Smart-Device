@@ -162,6 +162,15 @@
   padding-right: 80px;
   text-align: center;
   box-sizing: border-box;
+
+  &:hover,
+  &:focus {
+    color: $blue;
+  }
+
+  &:active {
+    color: rgba($blue, 0.3);
+  }
 }
 
 .footer__author {
