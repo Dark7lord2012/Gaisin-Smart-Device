@@ -1,0 +1,76 @@
+.site-list {
+  display: flex;
+  column-gap: 86px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+  outline: 1px solid green;
+
+  @media (max-width: $tablet-width-max) {
+    margin-top: -3px; // pixel perfect
+    column-gap: 34px;
+    align-items: center;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    column-gap: 23px;
+  }
+}
+
+.site-list__link {
+  display: flex;
+  color: $white;
+  text-decoration: none;
+  font-family: "PT Mono", "Courier", monospace;
+  outline: 1px solid blue;
+  // padding-left: 39px;
+  font-size: 16px;
+  line-height: 18px;
+
+  &--mail {
+    &::before {
+      width: 19px;
+      height: 14px;
+      margin-right: 20px;
+      display: inline-flex;
+      outline: 1px solid red;
+      content: "";
+      background-image: url("../../img/icon-mail.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+
+  &--phone {
+    &::before {
+      width: 18px;
+      height: 18px;
+      margin-right: 16px;
+      display: inline-flex;
+      outline: 1px solid red;
+      content: "";
+      background-image: url("../../img/icon-phone.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+
+  @media (max-width: $tablet-width-max) {
+    font-size: 0;
+
+    &--phone::before {
+      width: 24px;
+      height: 24px;
+      margin-right: 0;
+    }
+
+    &--mail::before {
+      width: 25px;
+      height: 18px;
+      margin-right: 0;
+    }
+  }
+}

@@ -1,2 +1,11 @@
 @import "blocks/variables.scss";
 @import "blocks/fonts.scss";
+@import "blocks/body.scss";
+// Шапка
+@import "blocks/header.scss";
+@import "blocks/site-list.scss";
+@import "blocks/promo.scss";
+// Main
+@import "blocks/main.scss";
+// Подвал
+@import "blocks/footer.scss";
