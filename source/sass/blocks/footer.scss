@@ -1,3 +1,6 @@
+// Дорогой читатель кода, прости меня заранее за футер,
+// это конечно полная жесть с сеткой, она была проще, пока я не заметил
+// 1 пиксельные полоски-разделители блоков, которые все усложнили
 .footer {
   position: relative;
   overflow: hidden;
@@ -37,7 +40,32 @@
   }
 
   @media (max-width: $tablet-width-max) {
-    padding: 20px 25px 24px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 16px 27px 24px;
+
+    &::before {
+      order: 7;
+      top: 0;
+      grid-column: 1 / 5;
+      margin-top: 35px;
+      margin-bottom: 22px;
+    }
+
+    &::after {
+      order: 4;
+      position: relative;
+      top: 0px;
+      left: -50%;
+      display: flex;
+      grid-column: 1 / 5;
+      content: "";
+      height: 1px;
+      margin-top: 26px;
+      margin-bottom: 36px;
+      width: 200vw;
+      box-sizing: border-box;
+      background-color: rgba($grey, 0.2);
+    }
   }
 }
 
@@ -65,12 +93,28 @@
   img:last-child {
     margin-top: 6px;
   }
+
+  @media (max-width: $tablet-width-max) {
+    order: 1;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
 }
 
 .footer__social {
   margin-top: 44px;
   margin-bottom: 0;
   grid-column: 1 / 2;
+
+  @media (max-width: $tablet-width-max) {
+    order: 3;
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+    align-self: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+  }
 }
 
 .footer__nav {
@@ -81,6 +125,15 @@
   padding-right: 30px;
   outline: 1px solid green;
   box-sizing: border-box;
+
+  @media (max-width: $tablet-width-max) {
+    order: 5;
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    width: calc(100% - 10px);
+    padding-left: 2px;
+    padding-right: 5px;
+  }
 }
 
 .footer__nav-list {
@@ -110,6 +163,14 @@
 
     &:active {
       color: rgba($blue, 0.3);
+    }
+  }
+
+  @media (max-width: $tablet-width-max) {
+    column-count: 1;
+
+    li + li {
+      margin-top: -0.5px; // pixel-perfect
     }
   }
 }
@@ -148,12 +209,28 @@
   address {
     font-style: normal;
   }
+
+  @media (max-width: $tablet-width-max) {
+    order: 6;
+    grid-column: 3 / 5;
+    grid-row: 3 / 4;
+    width: calc(100%);
+    margin-left: -8px;
+
+    h2 {
+      padding-left: 2px; // pixel-perfect
+    }
+  }
 }
 
 .footer__nav,
 .footer__contacts,
 .footer__social {
   margin-bottom: 72px;
+
+  @media (max-width: $tablet-width-max) {
+    margin-bottom: 0;
+  }
 }
 
 .footer__copyright,
@@ -185,6 +262,26 @@
   span:last-child {
     outline: 1px solid red;
   }
+
+  @media (max-width: $tablet-width-max) {
+    order: 2;
+    grid-template-columns: 2 / 4;
+    grid-row: 1 / 2;
+    width: 200%;
+    margin-top: 9px;
+    margin-left: 2px;
+    padding-right: 10px;
+    align-self: center;
+    justify-content: flex-end;
+
+    span:first-child {
+      display: none;
+    }
+
+    span:last-child {
+      margin-right: 17px;
+    }
+  }
 }
 
 .footer__confidence {
@@ -203,9 +300,23 @@
   &:active {
     color: rgba($blue, 0.3);
   }
+
+  @media (max-width: $tablet-width-max) {
+    order: 8;
+    grid-column: 1 / 3;
+    grid-row: 5 / 6;
+    padding: 0;
+    text-align: left;
+  }
 }
 
 .footer__author {
   margin-left: auto;
   text-align: right;
+
+  @media (max-width: $tablet-width-max) {
+    order: 9;
+    grid-column: 3 / 5;
+    grid-row: 5 / 6;
+  }
 }
