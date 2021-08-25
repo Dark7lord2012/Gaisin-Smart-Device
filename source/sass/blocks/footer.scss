@@ -1,4 +1,6 @@
 .footer {
+  position: relative;
+  overflow: hidden;
   outline: 1px solid #0f0;
   font-family: "PT Mono", "Courier", monospace;
   background-color: $back-footer;
@@ -16,6 +18,27 @@
   // justify-content: center;
   align-items: flex-start;
   grid-template-rows: repeat(3, min-content);
+
+  // Это какое-то безумие, не знаю что я здесь творю
+  // но других способов размести эту тонкую полоску не нашел
+  &::before {
+    position: relative;
+    top: -15px;
+    left: -50%;
+    order: 1;
+    display: flex;
+    grid-column: 1 / 4;
+    content: "";
+    height: 1px;
+    margin-bottom: -1px;
+    width: 200vw;
+    box-sizing: border-box;
+    background-color: rgba($grey, 0.2);
+  }
+
+  @media (max-width: $tablet-width-max) {
+    padding: 20px 25px 24px;
+  }
 }
 
 .footer__title {
@@ -31,13 +54,16 @@
 
 .footer__logo-link {
   display: flex;
-  border: 2px solid red;
+  justify-content: space-between;
+  outline: 1px solid red;
   padding: 0;
+  margin-top: 2px;
+  margin-left: -2px;
   width: 216px;
   height: 52px;
 
-  img {
-    width: 100%;
+  img:last-child {
+    margin-top: 6px;
   }
 }
 
@@ -124,11 +150,18 @@
   }
 }
 
+.footer__nav,
+.footer__contacts,
+.footer__social {
+  margin-bottom: 72px;
+}
+
 .footer__copyright,
 .footer__years,
 .footer__confidence,
 .footer__author {
-  margin-top: 72px;
+  order: 3;
+  margin-top: 0;
   margin-bottom: 0;
   width: auto;
 
@@ -147,20 +180,19 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 20px;
 
   span:last-child {
-    margin-left: 20px;
     outline: 1px solid red;
   }
-  // margin-left: -73px;
 }
 
 .footer__confidence {
-  // margin-left: -124px;
   width: calc(100% - 35px);
   padding-left: 45px;
   padding-right: 80px;
   text-align: center;
+  box-sizing: border-box;
   box-sizing: border-box;
 
   &:hover,
@@ -176,5 +208,4 @@
 .footer__author {
   margin-left: auto;
   text-align: right;
-  // padding-right: 10px;
 }

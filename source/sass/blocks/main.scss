@@ -4,4 +4,8 @@
   background-color: black;
   color: white;
   height: 3520px;
+
+  @media (max-width: $tablet-width-max) {
+    height: 3383px;
+  }
 }

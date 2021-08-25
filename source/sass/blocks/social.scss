@@ -20,4 +20,30 @@
   outline: 1px solid red;
   width: 27px;
   height: 27px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 27px;
+  border-radius: 50%;
+
+  &--fb {
+    background-image: url("../img/icon-facebook.svg");
+  }
+
+  &--ok {
+    background-image: url("../../img/icon-odnoklassniki.svg");
+  }
+
+  &--vk {
+    background-image: url("../../img/icon-vk.svg");
+  }
+
+  &:hover,
+  &:active {
+    background-color: $cyan; // позволительна ли отсебятина?
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }
