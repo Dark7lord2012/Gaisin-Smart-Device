@@ -16,6 +16,16 @@
   padding: 110px 25px 0;
   list-style: none;
   box-sizing: border-box;
+
+  @media (max-width: $tablet-width-max) {
+    padding: 51px 25px 0;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    grid-template-columns: 1fr;
+    gap: 21px;
+    padding: 37px 16px 0 14px;
+  }
 }
 
 .advantages__list-item {
@@ -46,6 +56,68 @@
   svg {
     fill: $cyan;
   }
+
+  @media (max-width: $tablet-width-max) {
+    padding: 23px 21px 23px 25px;
+
+    // Безумно большая избыточность кода ниже, нужно что-то придумать
+    &--time {
+      svg {
+        width: 29px;
+        height: 36px;
+      }
+    }
+
+    &--providers {
+      svg {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 3px;
+      }
+    }
+
+    &--confidence {
+      svg {
+        margin-top: 3px;
+        margin-bottom: 3px;
+        width: 30px;
+        height: 26px;
+      }
+    }
+
+    &--price {
+      svg {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 2px;
+      }
+    }
+
+    &:last-child {
+      padding-bottom: 33px;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding-bottom: 26px;
+    padding-right: 15px;
+
+    &--providers {
+      padding-right: 12px;
+      padding-bottom: 30px;
+
+      svg {
+        margin-bottom: 0px;
+      }
+    }
+
+    &--confidence {
+      svg {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 .advantages h3 {
@@ -57,6 +129,17 @@
   color: $cyan;
   font-size: 24px;
   line-height: 34px;
+
+  @media (max-width: $tablet-width-max) {
+    margin-top: 4px;
+    margin-bottom: 9px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-top: 8px;
+    font-size: 20px;
+    line-height: 28px;
+  }
 }
 
 .advantages p {
@@ -64,4 +147,31 @@
   margin-bottom: 0;
   font-size: 16px;
   line-height: 22px;
+}
+
+// Этот код ниже я посвящаю богине Pixel Perfect
+// По необъяснимым причинам преимушество confidence особенное по размерам
+// и только на mobile версии эти особенности влияют на совпадение макета аж более на 10px
+.advantages__list-item:nth-child(3n) {
+  @media (max-width: $mobile-width-max) {
+    padding-bottom: 58px;
+
+    p {
+      margin-top: 18px;
+    }
+  }
+}
+
+.advantages__list-item:last-of-type {
+  padding-bottom: 22px;
+
+  svg {
+    margin-left: 2px;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    margin-left: 1px;
+    margin-bottom: 17px;
+  }
 }
