@@ -1,15 +1,15 @@
 .main {
   outline: 1px solid orange;
   box-sizing: border-box;
-  background-color: black;
-  color: white;
-  height: 3520px;
+  // background-color: black;
+  // color: white;
+  // height: 3520px;
 
   @media (max-width: $tablet-width-max) {
-    height: 3383px;
+    // height: 3383px;
   }
 
   @media (max-width: $tablet-width-max) {
-    height: 3955px;
+    // height: 3955px;
   }
 }
