@@ -28,10 +28,21 @@
       calc(50% + 320px) -39px,
       calc(50% + 130px) calc(50% - 62px); // pixel-perfect который занял 45 минут О_о
       // center;
-    background-size:
+      background-size:
       465px 340px,
       534px 505px,
       auto 145%; // я думал это займет минут 10 а не час
+    }
+
+    @media (max-width: $tablet-width-max) {
+      background-size:
+      301px 220px,
+      507px 483px,
+      auto 145%;
+      background-position:
+        calc(50% + 16px) 92px,
+        calc(50% + 245px) -46px,
+        calc(50% + 130px) calc(50% - 62px);
   }
 }
 

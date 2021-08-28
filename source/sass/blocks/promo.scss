@@ -13,10 +13,17 @@
   box-sizing: border-box;
 
   @media (max-width: $tablet-width-max) {
-    padding-top: 97px;
+    padding-top: 98px;
     padding-left: 88px;
     padding-right: 88px;
     padding-bottom: 165px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding-top: 214px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 70px;
   }
 }
 
@@ -37,6 +44,13 @@
 
     font-size: 60px;
     line-height: 70px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    max-width: 100%;
+    margin-bottom: 27.5px;
+    font-size: 40px;
+    line-height: 47px;
   }
 }
 
@@ -75,6 +89,16 @@
       width: 33px;
     }
   }
+
+  @media (max-width: $mobile-width-max) {
+    margin-bottom: 42px;
+    font-size: 16px;
+    line-height: 25px;
+
+    &::before {
+      top: 15px;
+    }
+  }
 }
 
 .promo__anchor-link {
@@ -98,6 +122,22 @@
   @media (max-width: $tablet-width-max) {
     margin-left: 50px;
     padding: 17px 32px 19px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    display: flex;
+    justify-content: center;
+    margin-left: 3px; // сомнительно
+    padding: 17px 11px 19.5px;
+    font-size: 0;
+    text-align: center;
+
+    &::after {
+      font-size: 16px;
+      letter-spacing: 0.05em;
+      // Да даже этот трюк не так трудозатратен по времени как подбор ПП фону шапки
+      content: attr(data-text);
+    }
   }
 }
 
