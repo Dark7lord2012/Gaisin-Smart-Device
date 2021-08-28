@@ -4,7 +4,7 @@
   background-image:
     url("../../img/circuit-boards.png"),
     url("../../img/triangle.svg"),
-    url("../../img/back-header-1.png");
+    url("../../img/back-header-tablet.png");
   background-size:
     705px 515px,
     671px 641px,
@@ -17,9 +17,21 @@
 
   @media (min-resolution: 2dppx) {
     background-image:
-      url("../../img/circuit-boards@2x.png"),
-      url("../../img/triangle.svg"),
-      url("../../img/back-header-1@2x.png");
+    url("../../img/circuit-boards@2x.png"),
+    url("../../img/triangle.svg"),
+    url("../../img/back-header-tablet@2x.png");
+  }
+
+  @media (max-width: $tablet-width-max) {
+    background-position:
+      calc(50% + 358px) 113px,
+      calc(50% + 320px) -39px,
+      calc(50% + 130px) calc(50% - 62px); // pixel-perfect который занял 45 минут О_о
+      // center;
+    background-size:
+      465px 340px,
+      534px 505px,
+      auto 145%; // я думал это займет минут 10 а не час
   }
 }
 
@@ -56,6 +68,10 @@
 
   img:last-child {
     margin-top: 5px;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    margin-left: 0px;
   }
 
   @media (max-width: $mobile-width-max) {
