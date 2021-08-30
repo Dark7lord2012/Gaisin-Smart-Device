@@ -2,11 +2,9 @@
   background-color: $white;
   color: $grey-three;
   font-family: "PT Mono", "Courier", monospace;
-  outline: 1px solid red;
 }
 
 .advantages__list {
-  outline: 1px solid yellow;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
@@ -44,6 +42,7 @@
   &:hover {
     background-color: $cyan;
     color: $white;
+    cursor: pointer;
 
     h3,
     p,
@@ -94,7 +93,7 @@
     }
 
     &:last-child {
-      padding-bottom: 33px;
+      padding-bottom: 37px;
     }
   }
 
@@ -163,15 +162,17 @@
 }
 
 .advantages__list-item:last-of-type {
-  padding-bottom: 22px;
+  @media (max-width: $mobile-width-max) {
+    padding-bottom: 22px;
 
-  svg {
-    margin-left: 2px;
-    margin-bottom: 0;
-  }
+    svg {
+      margin-left: 2px;
+      margin-bottom: 0;
+    }
 
-  h3 {
-    margin-left: 1px;
-    margin-bottom: 17px;
+    h3 {
+      margin-left: 1px;
+      margin-bottom: 16px;
+    }
   }
 }
