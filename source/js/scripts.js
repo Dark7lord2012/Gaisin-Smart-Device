@@ -7,14 +7,16 @@
     button.classList.remove('footer__button-collapse--no-js');
 
     button.addEventListener('click', (evt) =>{
-      for (let buttonCollapse of buttonsCollapse) {
-        console.log(buttonsCollapse != evt.target)
-        if (buttonCollapse.classList.contains('footer__button-collapse--closed') != false) {
-          buttonCollapse.classList.add('footer__button-collapse--closed');
+      if (evt.target.classList.contains('footer__button-collapse--closed')) {
+        for (let btn of buttonsCollapse) {
+          btn.classList.add('footer__button-collapse--closed');
         }
+        evt.target.classList.remove('footer__button-collapse--closed');
+      } else {
+        evt.target.classList.add('footer__button-collapse--closed');
       }
 
-      evt.target.classList.toggle('footer__button-collapse--closed');
+      // evt.target.classList.toggle('footer__button-collapse--closed');
     });
   }
 

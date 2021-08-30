@@ -476,15 +476,17 @@
 }
 
 .footer__button-collapse--closed {
-  &::after {
-    transform: rotate(270deg);
-    transition: 0.4s;
-  }
+  @media (max-width: $mobile-width-max) {
+    &::after {
+      transform: rotate(270deg);
+      transition: 0.4s;
+    }
 
-  & ~ ul,
-  & ~ address,
-  & ~ a {
-    display: none;
+    & ~ ul,
+    & ~ address,
+    & ~ a {
+      display: none;
+    }
   }
 }
 
