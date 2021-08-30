@@ -1,15 +1,42 @@
 .main {
+  position: relative;
   outline: 1px solid orange;
   box-sizing: border-box;
-  // background-color: black;
-  // color: white;
-  // height: 3520px;
+  overflow: hidden; // для фона треугольников во избавление от нижней полосы прокрутки
 
-  @media (max-width: $tablet-width-max) {
-    // height: 3383px;
+  &::before {
+    z-index: -1;
+    position: absolute;
+    top: -30px;
+    left: calc(50% - 135px);
+    transform: translateX(-50%);
+    display: block;
+    width: 2243px;
+    height: 1347px;
+    content: "";
+    background-image: url("../../img/triangles-5.svg");
+    background-size: 2243px 1347px;
+    background-repeat: no-repeat;
   }
 
   @media (max-width: $tablet-width-max) {
-    // height: 3955px;
+    &::before {
+      width: 636px;
+      height: 636px;
+      transform: translate(0) rotate(-150deg);
+      top: 242px;
+      left: auto;
+      right: -172px;
+      background-image: url("../../img/triangle-4.svg");
+      background-size: 636px 636px;
+      background-position: center;
+    }
+  }
+
+  @media (max-width: $tablet-width-max) {
+    &::before {
+      top: 805px;
+      right: -292px;
+    }
   }
 }

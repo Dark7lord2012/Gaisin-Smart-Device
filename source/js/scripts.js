@@ -15,8 +15,6 @@
       } else {
         evt.target.classList.add('footer__button-collapse--closed');
       }
-
-      // evt.target.classList.toggle('footer__button-collapse--closed');
     });
   }
 
