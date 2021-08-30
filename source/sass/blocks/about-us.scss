@@ -12,7 +12,6 @@
   background-image: url("../../img/2005.png");
   background-size: 220px 317px;
   background-repeat: no-repeat;
-  background-color: $white;
   background-position: 115px 110px;
   color: $grey-three;
 
@@ -26,6 +25,11 @@
 
     background-size: 251px 362px;
     background-position: -8px 53px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding: 57px 14px 65px;
+    background-image: none;
   }
 }
 
@@ -43,6 +47,12 @@
     font-size: 32px;
     line-height: 45px;
   }
+
+  @media (max-width: $mobile-width-max) {
+    margin-bottom: 21px;
+    font-size: 28px;
+    line-height: 39px;
+  }
 }
 
 .about-us p {
@@ -56,6 +66,16 @@
     margin-left: 3px;
     display: block;
     max-width: 100%;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-bottom: 42px;
+
+    // по идее можно было бы использовать тег p + p
+    // но в таком случае не прохожу критерии по селекторам (не более 2х)?
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -81,5 +101,9 @@
     margin-top: 22px;
     padding-left: 50px;
     margin-left: 3px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-top: 32px;
   }
 }
