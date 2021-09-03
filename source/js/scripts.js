@@ -34,14 +34,16 @@
 
   const aboutUsText = document.querySelector('.about-us p:last-of-type');
   const oldText = aboutUsText.textContent;
+  const maxTabletWidth = 1024;
+  const maxSymbols = 200;
 
-  if (document.documentElement.clientWidth < 1024) {
-    aboutUsText.textContent = kitcut(aboutUsText.textContent, 201)
+  if (document.documentElement.clientWidth < maxTabletWidth) {
+    aboutUsText.textContent = kitcut(aboutUsText.textContent, maxSymbols)
   }
 
   window.addEventListener('resize', () => {
-    if (document.documentElement.clientWidth < 1024) {
-      aboutUsText.textContent = kitcut(aboutUsText.textContent, 201)
+    if (document.documentElement.clientWidth < maxTabletWidth) {
+      aboutUsText.textContent = kitcut(aboutUsText.textContent, maxSymbols)
     } else {
       aboutUsText.textContent = oldText;
     }

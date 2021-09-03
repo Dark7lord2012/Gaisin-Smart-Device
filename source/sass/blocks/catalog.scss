@@ -9,6 +9,10 @@
     padding-top: 50px;
     padding-bottom: 80px;
   }
+
+  @media (max-width: $mobile-width-max) {
+    padding-bottom: 64px;
+  }
 }
 
 .catalog__list,
@@ -34,6 +38,14 @@
     font-size: 32px;
     line-height: 45px;
   }
+
+  @media (max-width: $mobile-width-max) {
+    font-size: 28px;
+    line-height: 39.38px; // во имя славной богини PP
+    margin-bottom: 42px;
+    max-width: 100%;
+    padding: 0 21px 0 25px;
+  }
 }
 
 .catalog__list {
@@ -54,6 +66,11 @@
   @media (max-width: $tablet-width-max) {
     padding: 0 25px 0 26px;
     gap: 45px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding: 0 15px;
+    gap: 31px;
   }
 }
 
@@ -149,14 +166,12 @@
     &:nth-child(3n - 2) {
       img {
         transform: scale(1.14) translate(-4px, -1px);
-        // opacity: 1;
       }
     }
 
     &:nth-child(3n - 1) {
       img {
         transform: scale(2.74); // не точное, но близкое совпадение
-        // opacity: 1;
       }
     }
     // передаю привет богине Pixel Perfect
@@ -169,6 +184,39 @@
         padding-top: 32px;
         margin-bottom: 7px;
       }
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    h3 {
+      width: 100%;
+      max-width: 240px;
+      padding: 0px 35px 0;
+      box-sizing: border-box;
+    }
+
+    &:nth-child(3n - 2) {
+      img {
+        transform: scale(1.18) translate(-1px, -1px);
+      }
+    }
+
+    &:nth-child(3n - 1) {
+      img {
+        transform: scale(2.07);
+        // opacity: 1;
+      }
+    }
+
+    &:nth-of-type(3n) {
+      h3 {
+        padding-top: 10px;
+        margin-bottom: 12px;
+      }
+    }
+
+    &::after {
+      background-position: center;
     }
   }
 }
@@ -197,6 +245,7 @@
     ~ img {
       opacity: 1;
       filter: saturate(50%);
+      transition-duration: 0.2s;
     }
 
     h3 {
@@ -205,9 +254,13 @@
   }
 
   @media (max-width: $tablet-width-max) {
-    padding-bottom: 20px;
     padding-bottom: 19.1%;
     max-height: 303px;
   }
-}
 
+  @media (max-width: $mobile-width-max) {
+    // max-height: 256px;
+    max-height: none;
+    padding-bottom: 53.75%;
+  }
+}
