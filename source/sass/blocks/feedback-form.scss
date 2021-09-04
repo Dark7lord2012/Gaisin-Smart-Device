@@ -1,0 +1,208 @@
+.feedback-form {
+  padding-top: 91px;
+  padding-bottom: 115px;
+  background-color: $cyan;
+  color: $white;
+
+  background-image:
+    url("../../img/paper-plane.png"),
+    url("../../img/triangle-2.svg");
+  background-size:
+    511px 288px,
+    670px 641px;
+  background-repeat: no-repeat;
+  background-position:
+    calc(25% - 3px) 161px,
+    175px -60px;
+}
+
+.feedback-form form {
+  outline: 1px solid white;
+  max-width: $desktop-width-max + 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.feedback-form fieldset {
+  max-width: 572px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  margin-left: auto;
+  margin-right: 121px;
+  padding: 0 0 0 4px;
+  border: none;
+  box-sizing: border-box;
+}
+
+.feedback-form legend {
+  margin-top: 0;
+  margin-left: -4px;
+  padding: 0;
+
+  font-size: 36px;
+  line-height: 52px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+}
+
+.feedback-form p {
+  margin-top: 10px;
+  margin-bottom: 50px;
+
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "PT Mono", "Courier", monospace;
+  font-weight: 400;
+}
+
+.feedback-form input[type="text"],
+.feedback-form input[type="tel"] {
+  width: calc(50% - (30px / 2));
+  margin-bottom: 40px;
+}
+
+
+.feedback-form input[type="text"],
+.feedback-form input[type="tel"],
+.feedback-form textarea {
+  padding: 14px 16px 16px;
+  background-color: rgba($white, 0.1);
+  box-sizing: border-box;
+  border: none;
+  color: $white;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "PT Mono", "Courier", monospace;
+
+  &::placeholder {
+    color: $white;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: rgba($white, 0.8);
+    color: $blue;
+
+    &::placeholder {
+      color: $blue;
+    }
+  }
+}
+
+.feedback-form textarea {
+  width: 100%;
+  min-height: 154px;
+  padding-top: 10px;
+  resize: none;
+}
+
+.feedback-form__button-submit {
+  margin-top: 42px;
+  width: calc(50% - (30px / 2));
+  padding: 13px 18px 13px;
+
+  border: 1px solid $white;
+  background-color: $cyan;
+  color: $white;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  box-sizing: border-box;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $white;
+    color: $cyan;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.feedback-form label {
+  position: relative;
+
+  display: inline-flex;
+  align-self: center;
+  max-width: 262px;
+  margin-top: 45px;
+  // padding-left: 31px;
+  box-sizing: border-box;
+
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "PT Mono", "Arial", sans-serif;
+
+  span {
+    padding-left: 2px;
+    color: rgba($white, 0.8);
+  }
+
+  &:hover {
+    span {
+      color: $white;
+    }
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+// .feedback-form span::before {
+//   position: absolute;
+//   top: 4px;
+//   left: 1px;
+//   border: 1px solid $white;
+//   width: 16px;
+//   height: 16px;
+//   box-sizing: border-box;
+//   content: "";
+
+//   background-image: url("../../img/icon-check.svg");
+//   background-size: 9px 6px;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   opacity: 1;
+// }
+
+.feedback-form__svg-check-wrapper {
+  display: flex;
+  align-self: flex-start;
+  justify-content: center;
+  // display: none;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  padding: 0;
+  margin-right: 15.5px;
+  box-sizing: border-box;
+  border: 1px solid $white;
+}
+
+.feedback-form__input-check:focus ~ span {
+  color: $white;
+  // outline: 1px   solid red;
+}
+
+.feedback-form__input-check:active ~ span {
+  opacity: 0.5;
+}
+
+// ?
+.feedback-form__input-check:checked ~ .feedback-form__svg-check-wrapper{
+  use {
+    display: none;
+  }
+}
