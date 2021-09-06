@@ -33,6 +33,39 @@
         Заказать звонок
       </button>
     </div>
+    <!-- Попап заказа звонка -->
+    <div class="popup-callback">
+      <div class="popup-callback__wrapper">
+        <h2>Закажите звонок</h2>
+        <button class="popup-callback__button-close">
+          <span class="visually-hidden">Закрыть</span>
+          <svg width="16" height="16">
+            <use href="img/sprite.svg#icon-cross"></use>
+          </svg>
+        </button>
+        <p>
+          Оставьте контакты, мы проконсультируем вас бесплатно в удобное время
+        </p>
+        <form action="https://echo.htmlacademy.ru/" method="POST">
+          <input type="text" name="name" placeholder="Имя" aria-label="Имя" required>
+          <input class="js-mask" type="tel" name="phone" placeholder="Телефон"
+            aria-label="Телефон" required>
+          <textarea name="question" aria-label="Ваш вопрос" placeholder="Ваш вопрос"></textarea required>
+          <button class="popup-callback__button-submit" type="submit">Отправить</button>
+          <label>
+            <input class="popup-callback__input-check visually-hidden"
+              type="checkbox" name="confidence" required>
+            <span class="popup-callback__svg-check-wrapper">
+              <svg class="popup-callback__svg-check" width="16" height="16">
+                <use href="img/sprite.svg#icon-check"></use>
+              </svg>
+            </span>
+            <span>Я согласен на обработку  персональных данных</span>
+          </label>
+        </form>
+      </div>
+    </div>
+
     <div class="header__promo promo">
       <div class="promo__wrapper">
         <h1>Печатные платы</h1>
@@ -117,27 +150,18 @@
         <li class="catalog__list-item">
           <a class="catalog__link" href="#">
             <h3>Производство печатных плат</h3>
-            <!-- <svg width="8" height="4">
-              <use href="img/sprite.svg#icon-arrow-right"></use>
-            </svg> -->
           </a>
           <img src="img/catalog-photo-1.png" alt="Печатная плата под станком" width="370" height="620">
         </li>
         <li class="catalog__list-item">
           <a class="catalog__link" href="#">
             <h3>Монтаж печатных плат</h3>
-            <!-- <svg width="8" height="4">
-              <use href="img/sprite.svg#icon-arrow-right"></use>
-            </svg> -->
           </a>
           <img src="img/catalog-photo-2.png" alt="Пайка микросхемы на печатной плате" width="370" height="620">
         </li>
         <li class="catalog__list-item">
           <a class="catalog__link" href="#">
             <h3>Комплектующие для светотехники</h>
-              <!-- <svg width="8" height="4">
-                <use href="img/sprite.svg#icon-arrow-right"></use>
-              </svg> -->
             </a>
             <img src="img/catalog-photo-3.png" alt="Светодиодная лента" width="370" height="620">
           </li>
@@ -151,19 +175,17 @@
           <legend>Остались вопросы? Задайте их нам!</legend>
           <p>Мы проконсультируем Вас бесплатно</p>
           <input type="text" name="name" placeholder="Имя" aria-label="Имя">
-          <input type="tel" name="phone" placeholder="Телефон" aria-label="Телефон">
+          <input class="js-mask" type="tel" name="phone" placeholder="Телефон" aria-label="Телефон">
           <textarea name="question" aria-label="Ваш вопрос" placeholder="Ваш вопрос"></textarea>
           <button class="feedback-form__button-submit">Задать вопрос</button>
-          <label for="confidence">
-            <input class="feedback-form__input-check visually-hidden" id="confidence" type="checkbox" name="confidence">
+          <label>
+            <input class="feedback-form__input-check visually-hidden"
+              type="checkbox" name="confidence" required>
             <span class="feedback-form__svg-check-wrapper">
               <svg class="feedback-form__svg-check" width="16" height="16">
                 <use href="img/sprite.svg#icon-check"></use>
               </svg>
             </span>
-            <!-- <svg class="feedback-form__svg-checkbox" width="9" height="6">
-              <use width="9" height="6" href="img/sprite.svg#icon-check" viewBox="0 0 9 6"></use>
-            </svg> -->
             <span>Я согласен на обработку  персональных данных</span>
           </label>
         </fieldset>
@@ -245,6 +267,8 @@
       <p class="footer__author">Developed by wow studio </p>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js"></script>
   <script src="js/scripts.min.js"></script>
 </body>
 </html>
