@@ -1,16 +1,16 @@
 .site-list {
   display: flex;
-  column-gap: 86px;
-  row-gap: 10px;
   flex-wrap: wrap;
   padding: 0;
+  row-gap: 10px;
+
   list-style: none;
-  outline: 1px solid green;
+  column-gap: 86px;
 
   @media (max-width: $tablet-width-max) {
+    align-items: center;
     margin-top: -3px; // pixel perfect
     column-gap: 34px;
-    align-items: center;
   }
 
   @media (max-width: $mobile-width-max) {
@@ -20,42 +20,49 @@
 
 .site-list__link {
   display: flex;
-  color: $white;
-  text-decoration: none;
-  font-family: "PT Mono", "Courier", monospace;
-  outline: 1px solid blue;
-  // padding-left: 39px;
+
   font-size: 16px;
   line-height: 18px;
+  font-family: "PT Mono", "Courier", monospace;
+  color: $white;
+  text-decoration: none;
 
   &--mail {
     &::before {
+      content: "";
+
+      display: inline-flex;
       width: 19px;
       height: 14px;
       margin-right: 20px;
-      display: inline-flex;
-      outline: 1px solid red;
-      content: "";
+
       background-image: url("../../img/icon-mail.svg");
       background-repeat: no-repeat;
-      background-size: contain;
       background-position: center;
+      background-size: contain;
     }
   }
 
   &--phone {
     &::before {
+      content: "";
+
+      display: inline-flex;
       width: 18px;
       height: 18px;
       margin-right: 16px;
-      display: inline-flex;
-      outline: 1px solid red;
-      content: "";
+
       background-image: url("../../img/icon-phone.svg");
       background-repeat: no-repeat;
-      background-size: contain;
       background-position: center;
+      background-size: contain;
     }
+  }
+
+  &:hover,
+  &:focus {
+    color: $cyan;
+    transition: 0.2s;
   }
 
   @media (max-width: $tablet-width-max) {

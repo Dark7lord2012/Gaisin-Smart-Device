@@ -27,7 +27,6 @@
       calc(50% + 358px) 113px,
       calc(50% + 320px) -39px,
       calc(50% + 130px) calc(50% - 62px); // pixel-perfect который занял 45 минут О_о
-      // center;
       background-size:
       465px 340px,
       534px 505px,
@@ -54,7 +53,6 @@
   align-items: center;
   box-sizing: border-box;
   margin: 33px auto;
-  outline: 1px solid white;
 
   @media (max-width: $tablet-width-max) {
     max-width: none;
@@ -120,6 +118,12 @@
   color: $white;
   border-radius: 5px;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $cyan;
+    transition: 0.2s;
+  }
 
   @media (max-width: $tablet-width-max) {
     display: none;

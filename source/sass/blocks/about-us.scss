@@ -103,6 +103,13 @@
   border: 1px solid $cyan;
   border-radius: 5px;
 
+  &:hover,
+  &:focus {
+    background-color: $cyan;
+    color: $white;
+    transition: 0.2s;
+  }
+
   @media (max-width: $tablet-width-max) {
     margin-top: 22px;
     margin-left: 3px;

@@ -2,8 +2,8 @@
   padding-top: 89px;
   padding-bottom: 127px;
 
-  background-color: $blue;
   color: $white;
+  background-color: $blue;
 
   @media (max-width: $tablet-width-max) {
     padding-top: 50px;
@@ -17,51 +17,50 @@
 
 .catalog__list,
 .catalog h2 {
+  box-sizing: border-box;
   max-width: $desktop-width-max + 50px - 240px;
   margin: 0 auto;
-  box-sizing: border-box;
 }
 
 .catalog h2 {
-  padding-left: 25px;
-  padding-right: 25px;
   margin-bottom: 52px;
+  padding-right: 25px;
+  padding-left: 25px;
 
+  font-weight: 400;
   font-size: 36px;
   line-height: 51px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
-  font-weight: 400;
 
   @media (max-width: $tablet-width-max) {
     max-width: 660px;
     margin: 0 0 49px;
+
     font-size: 32px;
     line-height: 45px;
   }
 
   @media (max-width: $mobile-width-max) {
+    max-width: 100%;
+    margin-bottom: 42px;
+    padding: 0 21px 0 25px;
+
     font-size: 28px;
     line-height: 39.38px; // во имя славной богини PP
-    margin-bottom: 42px;
-    max-width: 100%;
-    padding: 0 21px 0 25px;
   }
 }
 
 .catalog__list {
-  max-width: 1170px + 40px;
-  width: 100%;
-  padding: 0 20px 0 20px;
-  // outline: 1px solid red;
-  list-style: none;
   display: flex;
   flex-wrap: wrap;
-  // display: grid;
-  // grid-template-columns: repeat(3, calc(33% - (2 * 30px / 3)));
-  // justify-content: center;
   align-items: stretch;
   gap: 30px;
   box-sizing: border-box;
+  width: 100%;
+  max-width: 1170px + 40px;
+  padding: 0 20px 0 20px;
+
+  list-style: none;
 
   @media (max-width: $tablet-width-max) {
     padding: 0 25px 0 26px;
@@ -76,77 +75,75 @@
 
 .catalog__list-item {
   position: relative;
-  overflow: hidden;
+
   display: flex;
-  width: calc(33% - (26px * 2 / 3));
-  // width: 33%;
-  // max-width: 33%;
-  // max-height: 620px;
-  // flex-grow: 1;
-  // padding-bottom: 41.5%;
-  // padding-bottom: 20.5%;
-  // outline: 1px solid white;
-  margin-right: auto;
   box-sizing: border-box;
+  width: calc(33% - (26px * 2 / 3));
+  margin-right: auto;
+  overflow: hidden;
 
   &:nth-child(3n) {
     margin-right: none;
   }
 
   img {
-    z-index: 0;
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
-    // display: none;
-    object-fit: cover;
-    height: 100%;
+    left: 0;
+    z-index: 0;
+
     width: 100%;
-    filter: saturate(0);
+    height: 100%;
     // background-blend-mode: overlay;
+
     opacity: 0.2;
+    filter: saturate(0);
+
+    object-fit: cover;
   }
 
   &::after {
+    content: "";
     position: absolute;
     right: 0;
     bottom: 0;
-    content: "";
+
     display: inline-flex;
     width: 63px;
     height: 63px;
+
     background-color: $cyan;
     background-image: url("../../img/icons/icon-arrow-right.svg");
-    background-size: 6px 9px;
     background-repeat: no-repeat;
     background-position: calc(50% + 4px) calc(50% + 0px);
+    background-size: 6px 9px;
   }
 
   h3 {
-    z-index: 1;
     position: relative;
+    z-index: 1;
+
     width: 45%;
     padding: 31px 44px 0;
+
+    font-weight: 400;
     font-size: 20px;
     line-height: 30px;
-    color: $white;
     font-family: "Roboto Condensed", "Arial", sans-serif;
-    font-weight: 400;
+    color: $white;
     text-decoration: none;
   }
 
   &:nth-child(3n - 2) {
     img {
       transform: scale(1.17) translate(-2px, -2px);
-      // opacity: 1;
     }
   }
   &:nth-child(3n - 1) {
     img {
       transform: scale(1.09);
-      // opacity: 1;
     }
   }
 
@@ -159,8 +156,8 @@
     }
 
     h3 {
-      padding-top: 20px;
       max-width: 170px;
+      padding-top: 20px;
     }
 
     &:nth-child(3n - 2) {
@@ -181,18 +178,18 @@
       }
 
       h3 {
-        padding-top: 32px;
         margin-bottom: 7px;
+        padding-top: 32px;
       }
     }
   }
 
   @media (max-width: $mobile-width-max) {
     h3 {
+      box-sizing: border-box;
       width: 100%;
       max-width: 240px;
-      padding: 0px 35px 0;
-      box-sizing: border-box;
+      padding: 0 35px 0;
     }
 
     &:nth-child(3n - 2) {
@@ -204,14 +201,13 @@
     &:nth-child(3n - 1) {
       img {
         transform: scale(2.07);
-        // opacity: 1;
       }
     }
 
     &:nth-of-type(3n) {
       h3 {
-        padding-top: 10px;
         margin-bottom: 12px;
+        padding-top: 10px;
       }
     }
 
@@ -222,29 +218,30 @@
 }
 
 .catalog__link {
-  display: absolute;
-  display: flex;
   z-index: 1;
   top: 0;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
+
+  display: absolute;
+  display: flex;
+  box-sizing: border-box;
   width: 100%;
+  max-width: 100%;
   height: 100%;
   max-height: 620px;
-  max-width: 100%;
-  overflow: auto;
   padding-bottom: 132.7%;
+  overflow: auto;
+
   text-decoration: none;
-  // outline: 1px solid red;
-  box-sizing: border-box;
 
   &:hover,
   &:focus {
-
     ~ img {
       opacity: 1;
       filter: saturate(50%);
+
       transition-duration: 0.2s;
     }
 
@@ -254,12 +251,11 @@
   }
 
   @media (max-width: $tablet-width-max) {
-    padding-bottom: 19.1%;
     max-height: 303px;
+    padding-bottom: 19.1%;
   }
 
   @media (max-width: $mobile-width-max) {
-    // max-height: 256px;
     max-height: none;
     padding-bottom: 53.75%;
   }

@@ -2,11 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 14px;
   width: max-content;
   max-width: 100%;
-  outline: 1px solid red;
   padding: 0;
+  gap: 14px;
+
   list-style: none;
 
   li {
@@ -16,8 +16,6 @@
 
 .social__link {
   display: inline-flex;
-  // font-size: 0;
-  outline: 1px solid red;
   width: 27px;
   height: 27px;
 

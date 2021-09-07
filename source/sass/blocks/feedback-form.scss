@@ -1,29 +1,31 @@
 .feedback-form {
   padding-top: 91px;
   padding-bottom: 115px;
-  background-color: $cyan;
+
   color: $white;
 
+  background-color: $cyan;
   background-image:
     url("../../img/paper-plane.png"),
     url("../../img/triangle-2.svg");
-  background-size:
-    511px 288px,
-    670px 641px;
   background-repeat: no-repeat;
   background-position:
     calc(25% - 3px) 161px,
     175px -60px;
+  background-size:
+    511px 288px,
+    670px 641px;
 
   @media (min-resolution: 2dppx) {
     background-image:
-    url("../../img/paper-plane@2x.png"),
-    url("../../img/triangle-2.svg");
+      url("../../img/paper-plane@2x.png"),
+      url("../../img/triangle-2.svg");
   }
 
   @media (max-width: $tablet-width-max) {
     padding-top: 78.5px;
     padding-bottom: 104px;
+
     background-image: none;
   }
 
@@ -34,12 +36,11 @@
 }
 
 .feedback-form form {
-  outline: 1px solid white;
-  max-width: $desktop-width-max + 50px;
-  padding-left: 25px;
-  padding-right: 25px;
-  margin: 0 auto;
   box-sizing: border-box;
+  max-width: $desktop-width-max + 50px;
+  margin: 0 auto;
+  padding-right: 25px;
+  padding-left: 25px;
 
   @media (max-width: $mobile-width-max) {
     padding: 0 15px;
@@ -47,22 +48,23 @@
 }
 
 .feedback-form fieldset {
-  max-width: 572px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0;
-  margin-left: auto;
-  margin-right: 121px;
-  padding: 0 0 0 4px;
-  border: none;
   box-sizing: border-box;
+  max-width: 572px;
+  margin: 0;
+  margin-right: 121px;
+  margin-left: auto;
+  padding: 0 0 0 4px;
+
+  border: none;
 
   @media (max-width: $tablet-width-max) {
-    margin-right: auto;
     max-width: none;
-    padding-left: 67px;
+    margin-right: auto;
     padding-right: 63px;
+    padding-left: 67px;
   }
 
   @media (max-width: $mobile-width-max) {
@@ -75,10 +77,10 @@
   margin-left: -4px;
   padding: 0;
 
+  font-weight: 400;
   font-size: 36px;
   line-height: 52px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
-  font-weight: 400;
 
   @media (max-width: $tablet-width-max) {
     font-size: 32px;
@@ -86,9 +88,10 @@
   }
 
   @media (max-width: $mobile-width-max) {
+    margin-left: 0;
+
     font-size: 28px;
     line-height: 39px;
-    margin-left: 0;
   }
 }
 
@@ -96,22 +99,22 @@
   margin-top: 10px;
   margin-bottom: 50px;
 
+  font-weight: 400;
   font-size: 16px;
   line-height: 22px;
   font-family: "PT Mono", "Courier", monospace;
-  font-weight: 400;
 
   @media (max-width: $tablet-width-max) {
     width: 100%;
     margin-top: 17px;
-    margin-left: 1px;
     margin-bottom: 54px;
+    margin-left: 1px;
   }
 
   @media (max-width: $mobile-width-max) {
     margin-top: 13px;
-    margin-left: 0;
     margin-bottom: 27px;
+    margin-left: 0;
   }
 }
 
@@ -134,14 +137,16 @@
 .feedback-form input[type="text"],
 .feedback-form input[type="tel"],
 .feedback-form textarea {
-  padding: 14px 16px 16px;
-  background-color: rgba($white, 0.1);
   box-sizing: border-box;
-  border: none;
-  color: $white;
+  padding: 14px 16px 16px;
+
   font-size: 16px;
   line-height: 22px;
   font-family: "PT Mono", "Courier", monospace;
+  color: $white;
+
+  background-color: rgba($white, 0.1);
+  border: none;
 
   &::placeholder {
     color: $white;
@@ -149,8 +154,9 @@
 
   &:hover,
   &:focus {
-    background-color: rgba($white, 0.8);
     color: $blue;
+
+    background-color: rgba($white, 0.8);
 
     &::placeholder {
       color: $blue;
@@ -166,11 +172,12 @@
   width: 100%;
   min-height: 154px;
   padding-top: 10px;
+
   resize: none;
 
   @media (max-width: $tablet-width-max) {
-    padding-top: 11px;
     min-height: 159px;
+    padding-top: 11px;
   }
 
   @media (max-width: $mobile-width-max) {
@@ -179,28 +186,30 @@
 }
 
 .feedback-form__button-submit {
-  margin-top: 42px;
+  box-sizing: border-box;
   width: calc(50% - (30px / 2));
+  margin-top: 42px;
   padding: 13px 18px 13px;
 
-  border: 1px solid $white;
-  background-color: $cyan;
-  color: $white;
+  font-weight: 700;
   font-size: 14px;
   line-height: 16px;
-  text-align: center;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
   font-family: "Roboto Condensed", "Arial", sans-serif;
-  font-weight: 700;
-  box-sizing: border-box;
+  text-align: center;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  background-color: $cyan;
+  border: 1px solid $white;
   border-radius: 5px;
   cursor: pointer;
 
   &:hover,
   &:focus {
-    background-color: $white;
     color: $cyan;
+
+    background-color: $white;
   }
 
   &:active {
@@ -223,10 +232,9 @@
 
   display: inline-flex;
   align-self: center;
+  box-sizing: border-box;
   max-width: 262px;
   margin-top: 45px;
-  // padding-left: 31px;
-  box-sizing: border-box;
 
   font-size: 14px;
   line-height: 16px;
@@ -258,15 +266,15 @@
 }
 
 .feedback-form span:first-of-type {
-  margin-right: 32px;
-  margin-top: 1px;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
   width: 16px;
   height: 16px;
+  margin-top: 1px;
+  margin-right: 15px;
   border: 1px solid $white;
-  box-sizing: border-box;
 
   use {
     display: none;
