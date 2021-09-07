@@ -1,19 +1,19 @@
 .about-us {
-  outline: 1px solid red;
+  box-sizing: border-box;
   max-width: $desktop-width-max + 50px;
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 105px;
-  padding-left: 25px + 300px;
   padding-right: 25px;
   padding-bottom: 110px;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
+  padding-left: 25px + 300px;
+
+  color: $grey-three;
 
   background-image: url("../../img/2005.png");
-  background-size: 220px 317px;
   background-repeat: no-repeat;
   background-position: 115px 110px;
-  color: $grey-three;
+  background-size: 220px 317px;
 
   @media (min-resolution: 2dppx) {
     background-image: url("../../img/2005@2x.png");
@@ -21,15 +21,16 @@
 
   @media (max-width: $tablet-width-max) {
     padding-top: 55px;
-    padding-left: 25px + 185px;
     padding-bottom: 83px;
+    padding-left: 25px + 185px;
 
-    background-size: 251px 362px;
     background-position: -8px 53px;
+    background-size: 251px 362px;
   }
 
   @media (max-width: $mobile-width-max) {
     padding: 57px 14px 65px;
+
     background-image: none;
   }
 }
@@ -38,35 +39,38 @@
   margin-top: 0;
   margin-bottom: 22px;
 
+  font-weight: 400;
   font-size: 36px;
   line-height: 51px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
-  font-weight: 400;
 
   @media (max-width: $tablet-width-max) {
     margin-bottom: 26px;
+
     font-size: 32px;
     line-height: 45px;
   }
 
   @media (max-width: $mobile-width-max) {
     margin-bottom: 21px;
+
     font-size: 28px;
     line-height: 39px;
   }
 }
 
 .about-us p {
-  margin: 0 0 21px;
   max-width: 984px;
+  margin: 0 0 21px;
+
   font-size: 16px;
   line-height: 22px;
   font-family: "PT Mono", "Courier", monospace;
 
   @media (max-width: $tablet-width-max) {
-    margin-left: 3px;
     display: block;
     max-width: 100%;
+    margin-left: 3px;
   }
 
   @media (max-width: $mobile-width-max) {
@@ -82,26 +86,27 @@
 
 .about-us a {
   display: inline-flex;
+  box-sizing: border-box;
   margin-top: 19px;
   padding: 14px 49px 13px;
-  border: 1px solid $cyan;
-  border-radius: 5px;
-  box-sizing: border-box;
 
-  font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
   text-align: center;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
   color: $cyan;
+  text-transform: uppercase;
   text-decoration: none;
+  letter-spacing: 0.05em;
+
+  border: 1px solid $cyan;
+  border-radius: 5px;
 
   @media (max-width: $tablet-width-max) {
     margin-top: 22px;
-    padding-left: 50px;
     margin-left: 3px;
+    padding-left: 50px;
   }
 
   @media (max-width: $mobile-width-max) {

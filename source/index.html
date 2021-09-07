@@ -10,7 +10,7 @@
   <link rel="preload" href="fonts/PTMono-Regular.woff2" as="font" crossorigin="anonymous">
   <title>Smart Device</title>
 </head>
-<body class="body">
+<body class="body body--blocke d" >
   <header class="header">
     <div class="header__wrapper">
       <a class="header__logo">
@@ -54,7 +54,7 @@
           <button class="popup-callback__button-submit" type="submit">Отправить</button>
           <label>
             <input class="popup-callback__input-check visually-hidden"
-              type="checkbox" name="confidence" required>
+              type="checkbox" name="confidence" required checked>
             <span class="popup-callback__svg-check-wrapper">
               <svg class="popup-callback__svg-check" width="16" height="16">
                 <use href="img/sprite.svg#icon-check"></use>
@@ -70,7 +70,7 @@
       <div class="promo__wrapper">
         <h1>Печатные платы</h1>
         <p>Производство и монтаж, поставка комплектующих, блоков и модулей</p>
-        <a class="promo__anchor-link" href="#footer" data-text="Бесплатная консультация">
+        <a class="promo__anchor-link" href="#feedback-form" data-text="Бесплатная консультация">
           Получить бесплатную консультацию
         </a>
         <a class="promo__scroll-down" href="#advantages">
@@ -83,7 +83,7 @@
   <main class="body__main main">
     <section class="advantages">
       <h2 class="visually-hidden">Преимущества</h2>
-      <ul class="advantages__list">
+      <ul class="advantages__list" id="advantages">
         <li class="advantages__list-item advantages__list-item--time">
           <svg width="29" height="35">
             <use href="img/sprite.svg#icon-timer"></use>
@@ -168,7 +168,7 @@
       </ul>
     </section>
 
-    <section class="feedback-form">
+    <section class="feedback-form" id="feedback-form">
       <h2 class="visually-hidden">Форма обратной связи</h2>
       <form action="https://echo.htmlacademy.ru/" method="POST">
         <fieldset>
@@ -180,7 +180,7 @@
           <button class="feedback-form__button-submit">Задать вопрос</button>
           <label>
             <input class="feedback-form__input-check visually-hidden"
-              type="checkbox" name="confidence" required>
+              type="checkbox" name="confidence" required checked>
             <span class="feedback-form__svg-check-wrapper">
               <svg class="feedback-form__svg-check" width="16" height="16">
                 <use href="img/sprite.svg#icon-check"></use>

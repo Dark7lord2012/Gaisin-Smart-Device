@@ -1,7 +1,7 @@
 'use strict';
 
 (() => {
-  // aккардеон в футере
+  // Aккoрдеон в футере
 
   let buttonsCollapse = document.querySelectorAll('.footer__button-collapse');
 
@@ -57,47 +57,123 @@
 
   // Oткрытие закрытие попапа заказа звонка в шапке
 
+  // попытки вспомнить localStorage
+  try {
+    var storageName = localStorage.getItem('name');
+    var storagePhone = localStorage.getItem('phone');
+    var storageQuestion = localStorage.getItem('question');
+  } catch(error) {
+    isStorageSupport = false;
+    console.log(error);
+  }
+  let isStorageSupport = true;
+
+  // Переменные для блока .popup-callback
   const buttonOpenModal = document.querySelector('.header__button-feedback');
   const popupCallback = document.querySelector('.popup-callback');
   const closePopupCallback = document.querySelector('.popup-callback__button-close');
   const wrapperPopupCallback = document.querySelector('.popup-callback__wrapper');
   const inputNamePopup = document.querySelector('.popup-callback input[type="text"]');
+  const inputPhonePopup = document.querySelector('.popup-callback input[type="tel"]');
+  const inputQuestionPopup = document.querySelector('.popup-callback textarea');
+  const buttonSubmitPopup = document.querySelector('.popup-callback button[type="submit');
+  const body = document.querySelector('.body');
 
 
   buttonOpenModal.addEventListener('click', () => {
     popupCallback.classList.add('popup-callback--opened');
     popupCallback.addEventListener('click', onOverlayClick);
     window.addEventListener('keydown', onWindowPressEsc);
-    inputNamePopup.focus();
+    body.classList.add('body--blocked');
+
+    if (storageName) {
+      inputNamePopup.value = storageName;
+      inputPhonePopup.focus();
+    }
+
+    if (storagePhone) {
+      inputPhonePopup.value = storagePhone;
+      inputQuestionPopup.focus();
+    }
+
+    if (storageQuestion) {
+      inputQuestionPopup.value = storageQuestion;
+      buttonSubmitPopup.focus();
+    }
   });
 
   closePopupCallback.addEventListener('click', () => {
     popupCallback.classList.remove('popup-callback--opened');
     popupCallback.removeEventListener('click', onOverlayClick);
     window.removeEventListener('keydown', onWindowPressEsc);
+    body.classList.remove('body--blocked');
   });
 
   // // 5 простых строчек для реализации клика по оверлею, но сколько времени на них протрачено...
   const onOverlayClick = (evt) => {
     if (!wrapperPopupCallback.contains(evt.target)) {
       popupCallback.classList.remove('popup-callback--opened');
+      body.classList.remove('body--blocked');
     }
   };
 
   const onWindowPressEsc = (evt) => {
     if (evt.key === 'Escape') {
       popupCallback.classList.remove('popup-callback--opened');
+      body.classList.remove('body--blocked');
+      window.removeEventListener('keydown', onWindowPressEsc);
     }
   };
 
-  // попытки вспомнить localStorage
-  let isStorageSupport = true;
+  buttonSubmitPopup.addEventListener('click', (evt) => {
+    if (!inputNamePopup.value || !inputPhonePopup.value || !inputQuestionPopup.value) {
+      evt.stopPropagation();
+      evt.preventDefault();
+      // анимация ошибки тут должна быть?
+    } else {
+      if (isStorageSupport) {
+        localStorage.setItem('name', inputNamePopup.value);
+        localStorage.setItem('phone', inputPhonePopup.value);
+        localStorage.setItem('question', inputQuestionPopup.value);
+      }
+    }
+  });
 
-  try {
-    let storageName = localStorage.getItem('name');
-    let storageEmail = localStorage.getItem('email');
-  } catch(error) {
-    isStorageSupport = false;
-    console.log(error);
+  // localStorage для блока .feedback-form
+
+  const inputNameFeedback = document.querySelector('.feedback-form input[type="text"]');
+  const inputPhoneFeedback = document.querySelector('.feedback-form input[type="tel"]');
+  const inputQuestionFeedback = document.querySelector('.feedback-form textarea');
+  const buttonSubmitFeedback = document.querySelector('.feedback-form button[type="submit');
+
+  // inputNameFeedback.focus();
+
+  if (storageName) {
+    inputNameFeedback.value = storageName;
   }
+
+  if (storagePhone) {
+    inputPhoneFeedback.value = storagePhone;
+  }
+
+  if (storageQuestion) {
+    inputQuestionFeedback.value = storageQuestion;
+  }
+
+  buttonSubmitFeedback.addEventListener('click', (evt) => {
+    if (!inputNameFeedback.value || !inputPhoneFeedback.value || !inputQuestionFeedback.value) {
+      evt.stopPropagation();
+      evt.preventDefault();
+      // анимация ошибки тут должна быть?
+    } else {
+      if (isStorageSupport) {
+        localStorage.setItem('name', inputNameFeedback.value);
+        localStorage.setItem('phone', inputPhoneFeedback.value);
+        localStorage.setItem('question', inputQuestionFeedback.value);
+      }
+    }
+  });
+
+  //
+
 })();

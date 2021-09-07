@@ -9,6 +9,12 @@
   color: $black;
   background-color: $white;
   font-family: "Roboto", "Arial", sans-serif;
+
+  &--blocked {
+    position:fixed;
+    overflow-y: scroll;
+    width: 100%;
+  }
 }
 
 .body__main {
