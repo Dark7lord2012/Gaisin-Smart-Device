@@ -15,11 +15,36 @@
     center;
   background-repeat: no-repeat;
 
+  // проклятый LightHouse, заставляет идти на такие извращения в 3 часа ночи
+  @supports (
+    background-image:
+      url("../img/circuit-boards.webp"),
+      url("../img/triangle.svg"),
+      url("../img/back-header-tablet.webp")
+  ) {
+    background-image:
+      url("../img/circuit-boards.webp"),
+      url("../img/triangle.svg"),
+      url("../img/back-header-tablet.webp");
+  }
+
   @media (min-resolution: 2dppx) {
     background-image:
       url("../img/circuit-boards@2x.png"),
       url("../img/triangle.svg"),
       url("../img/back-header-tablet@2x.png");
+
+    @supports (
+      background-image:
+        url("../img/circuit-boards@2x.webp"),
+        url("../img/triangle.svg"),
+        url("../img/back-header-tablet@2x.webp")
+    ) {
+      background-image:
+        url("../img/circuit-boards@2x.webp"),
+        url("../img/triangle.svg"),
+        url("../img/back-header-tablet@2x.webp");
+    }
   }
 
   @media (max-width: $tablet-width-max) {
