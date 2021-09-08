@@ -7,19 +7,23 @@
   background-color: $cyan;
   background-image:
     url("../img/paper-plane.png"),
-    url("../img/triangle-2.svg");
+    url("../img/triangle-2.svg"),
+    url("../img/triangles-ninja.svg");
   background-repeat: no-repeat;
   background-position:
-    calc(25% - 3px) 161px,
-    175px -60px;
+    calc(100% - 1059px) 161px,
+    175px -60px,
+    calc(100% + 147px) 36px;
   background-size:
     511px 288px,
-    670px 641px;
+    670px 641px,
+    510px 670px;
 
   @media (min-resolution: 2dppx) {
     background-image:
       url("../img/paper-plane@2x.png"),
-      url("../img/triangle-2.svg");
+      url("../img/triangle-2.svg"),
+      url("../img/triangles-ninja.svg");
   }
 
   @media (max-width: $tablet-width-max) {
