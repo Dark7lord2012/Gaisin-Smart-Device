@@ -12,6 +12,7 @@ const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const svgstore = require('gulp-svgstore');
 const del = require('del');
+const concat = require('gulp-concat');
 const sync = require('browser-sync').create();
 
 // Styles
@@ -37,15 +38,18 @@ exports.styles = styles;
 
 const html = () => {
   return gulp.src('source/*.html')
-    // .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('build'));
 }
 
 // Scripts
 
 const scripts = () => {
-  return gulp.src('source/js/scripts.js')
-    .pipe(terser())
+  return gulp.src([
+    'source/js/vendor.js',
+    'source/js/main.js',
+  ])
+    .pipe(concat('scripts.js'))
+    // .pipe(terser())
     .pipe(rename('scripts.min.js'))
     .pipe(gulp.dest('build/js'))
     .pipe(sync.stream());
@@ -147,7 +151,7 @@ const reload = (done) => {
 
 const watcher = () => {
   gulp.watch('source/sass/**/*.scss', gulp.series(styles));
-  gulp.watch('source/js/script.js', gulp.series(scripts));
+  gulp.watch('source/js/*.js', gulp.series(scripts));
   gulp.watch('source/*.html', gulp.series(html, reload));
 }
 
@@ -169,7 +173,6 @@ const build = gulp.series(
 exports.build = build;
 
 // Default
-
 
 exports.default = gulp.series(
   clean,
