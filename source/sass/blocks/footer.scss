@@ -52,7 +52,7 @@
     &::after {
       order: 4;
       position: relative;
-      top: 0px;
+      top: 0;
       left: -50%;
       display: flex;
       grid-column: 1 / 5;
@@ -419,7 +419,6 @@
   padding-left: 45px;
   padding-right: 80px;
   text-align: center;
-  box-sizing: border-box;
   box-sizing: border-box;
 
   &:hover,

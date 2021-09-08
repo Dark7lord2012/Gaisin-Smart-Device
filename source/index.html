@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Сайт посвященный производству и монтажу печатных плат и все что с ними связано">
-  <meta name="keywords" content="Печатные платы, производство плат, монтаж плат, комплектующие для плат, заказы, электронные схемы">
+  <meta name="keywords" content="Печатные платы, производство плат, монтаж плат, комплектующие для плат, заказы печатных плат, электронные схемы">
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="preload" href="fonts/Roboto-Medium.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/RobotoCondensed-Regular.woff2" as="font" crossorigin="anonymous">
@@ -49,10 +49,18 @@
           Оставьте контакты, мы проконсультируем вас бесплатно в удобное время
         </p>
         <form action="https://echo.htmlacademy.ru/" method="POST">
-          <input type="text" name="name" placeholder="Имя" aria-label="Имя" required>
+          <label class="visually-hidden" for="popup-name"></label>
+          <input type="text" name="name" placeholder="Имя"
+            aria-label="Имя" required id="popup-name">
+
+          <label class="visually-hidden" for="popup-phone"></label>
           <input class="js-mask" type="tel" name="phone" placeholder="Телефон"
-            aria-label="Телефон" required>
-          <textarea name="question" aria-label="Ваш вопрос" placeholder="Ваш вопрос"></textarea required>
+            aria-label="Телефон" required id="popup-phone">
+
+          <label class="visually-hidden" for="popup-question"></label>
+          <textarea name="question" aria-label="Ваш вопрос"
+            placeholder="Ваш вопрос" required id="popup-question"></textarea>
+
           <button class="popup-callback__button-submit" type="submit">Отправить</button>
           <label>
             <input class="popup-callback__input-check visually-hidden"
@@ -153,20 +161,44 @@
           <a class="catalog__link" href="#">
             <h3>Производство печатных плат</h3>
           </a>
-          <img src="img/catalog-photo-1.png" alt="Печатная плата под станком" width="370" height="620">
+          <picture>
+            <!-- Размер изображения без ретины: 370х620 -->
+            <!-- Размер изображения с ретиной : 740х1240 -->
+            <source type="image/webp" srcset=
+              "img/catalog-photo-1.webp 1x,
+              img/catalog-photo-1@2x.webp 2x">
+            <img src="img/catalog-photo-1.png" alt="Печатная плата под станком"
+              width="370" height="620" srcset="img/catalog-photo-1@2x.png 2x">
+          </picture>
         </li>
         <li class="catalog__list-item">
           <a class="catalog__link" href="#">
             <h3>Монтаж печатных плат</h3>
           </a>
-          <img src="img/catalog-photo-2.png" alt="Пайка микросхемы на печатной плате" width="370" height="620">
+          <picture>
+            <!-- Размер изображения без ретины: 370х620 -->
+            <!-- Размер изображения с ретиной : 740х1240 -->
+            <source type="image/webp" srcset=
+              "img/catalog-photo-2.webp 1x,
+              img/catalog-photo-2@2x.webp 2x">
+            <img src="img/catalog-photo-2.png" alt="Пайка микросхемы на печатной плате"
+              width="370" height="620" srcset="img/catalog-photo-2@2x.png 2x">
+          </picture>
         </li>
         <li class="catalog__list-item">
           <a class="catalog__link" href="#">
-            <h3>Комплектующие для светотехники</h>
-            </a>
-            <img src="img/catalog-photo-3.png" alt="Светодиодная лента" width="370" height="620">
-          </li>
+            <h3>Комплектующие для светотехники</h3>
+          </a>
+          <picture>
+            <!-- Размер изображения без ретины: 370х620 -->
+            <!-- Размер изображения с ретиной : 740х1240 -->
+            <source type="image/webp" srcset=
+              "img/catalog-photo-3.webp 1x,
+              img/catalog-photo-3@2x.webp 2x">
+            <img src="img/catalog-photo-3.png" alt="Светодиодная лента"
+              width="370" height="620" srcset="img/catalog-photo-3@2x.png 2x">
+          </picture>
+        </li>
       </ul>
     </section>
 
@@ -176,10 +208,19 @@
         <fieldset>
           <legend>Остались вопросы? Задайте их нам!</legend>
           <p>Мы проконсультируем Вас бесплатно</p>
-          <input type="text" name="name" placeholder="Имя" aria-label="Имя">
-          <input class="js-mask" type="tel" name="phone" placeholder="Телефон" aria-label="Телефон">
-          <textarea name="question" aria-label="Ваш вопрос" placeholder="Ваш вопрос"></textarea>
-          <button class="feedback-form__button-submit">Задать вопрос</button>
+
+          <label class="visually-hidden" for="feedback-name">Имя</label>
+          <input type="text" name="name" placeholder="Имя" aria-label="Имя" id="feedback-name">
+
+          <label class="visually-hidden" for="feedback-phone">Телефон</label>
+          <input class="js-mask" type="tel" name="phone"
+            placeholder="Телефон" aria-label="Телефон" id="feedback-phone">
+
+          <label class="visually-hidden" for="feedback-question">Ваш вопрос</label>
+          <textarea name="question" aria-label="Ваш вопрос"
+            placeholder="Ваш вопрос" id="feedback-question"></textarea>
+
+          <button class="feedback-form__button-submit" type="submit">Задать вопрос</button>
           <label>
             <input class="feedback-form__input-check visually-hidden"
               type="checkbox" name="confidence" required checked>
@@ -266,7 +307,7 @@
         <span>1999-2018 SD Service Devices</span>
       </p>
       <a class="footer__confidence" href="#">Условия конфиденциальности</a>
-      <p class="footer__author">Developed by wow studio </p>
+      <a class="footer__author" href="#">Developed by wow studio </a>
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>

@@ -115,7 +115,7 @@
     height: 63px;
 
     background-color: $cyan;
-    background-image: url("../../img/icons/icon-arrow-right.svg");
+    background-image: url("../img/icon-arrow-right.svg");
     background-repeat: no-repeat;
     background-position: calc(50% + 4px) calc(50% + 0px);
     background-size: 6px 9px;
@@ -141,6 +141,7 @@
       transform: scale(1.17) translate(-2px, -2px);
     }
   }
+
   &:nth-child(3n - 1) {
     img {
       transform: scale(1.09);
@@ -224,7 +225,6 @@
   bottom: 0;
   left: 0;
 
-  display: absolute;
   display: flex;
   box-sizing: border-box;
   width: 100%;
@@ -238,6 +238,7 @@
 
   &:hover,
   &:focus {
+    ~ picture img,
     ~ img {
       opacity: 1;
       filter: saturate(50%);

@@ -10,13 +10,13 @@
 
   color: $grey-three;
 
-  background-image: url("../../img/2005.png");
+  background-image: url("../img/2005.png");
   background-repeat: no-repeat;
   background-position: 115px 110px;
   background-size: 220px 317px;
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../../img/2005@2x.png");
+    background-image: url("../img/2005@2x.png");
   }
 
   @media (max-width: $tablet-width-max) {

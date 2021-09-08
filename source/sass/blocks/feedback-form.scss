@@ -6,8 +6,8 @@
 
   background-color: $cyan;
   background-image:
-    url("../../img/paper-plane.png"),
-    url("../../img/triangle-2.svg");
+    url("../img/paper-plane.png"),
+    url("../img/triangle-2.svg");
   background-repeat: no-repeat;
   background-position:
     calc(25% - 3px) 161px,
@@ -18,8 +18,8 @@
 
   @media (min-resolution: 2dppx) {
     background-image:
-      url("../../img/paper-plane@2x.png"),
-      url("../../img/triangle-2.svg");
+      url("../img/paper-plane@2x.png"),
+      url("../img/triangle-2.svg");
   }
 
   @media (max-width: $tablet-width-max) {

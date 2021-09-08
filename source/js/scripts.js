@@ -76,7 +76,7 @@
   const inputNamePopup = document.querySelector('.popup-callback input[type="text"]');
   const inputPhonePopup = document.querySelector('.popup-callback input[type="tel"]');
   const inputQuestionPopup = document.querySelector('.popup-callback textarea');
-  const buttonSubmitPopup = document.querySelector('.popup-callback button[type="submit');
+  const buttonSubmitPopup = document.querySelector('.popup-callback button[type="submit"]');
   const body = document.querySelector('.body');
 
 
@@ -144,7 +144,7 @@
   const inputNameFeedback = document.querySelector('.feedback-form input[type="text"]');
   const inputPhoneFeedback = document.querySelector('.feedback-form input[type="tel"]');
   const inputQuestionFeedback = document.querySelector('.feedback-form textarea');
-  const buttonSubmitFeedback = document.querySelector('.feedback-form button[type="submit');
+  const buttonSubmitFeedback = document.querySelector('.feedback-form button[type="submit"]');
 
   // inputNameFeedback.focus();
 
