@@ -45,12 +45,12 @@ const html = () => {
 
 const scripts = () => {
   return gulp.src([
-    'source/js/vendor.js',
-    'source/js/main.js',
+    'source/js/*.js',
+    '!source/js/vendor.js'
   ])
     .pipe(concat('scripts.js'))
     // .pipe(terser())
-    .pipe(rename('scripts.min.js'))
+    .pipe(rename('main.js'))
     .pipe(gulp.dest('build/js'))
     .pipe(sync.stream());
 }
@@ -107,6 +107,7 @@ const copy = (done) => {
   gulp.src([
     'source/fonts/*.{woff2,woff}',
     'source/*.ico',
+    'source/js/vendor.js',
     'source/img/**/*.svg',
     '!source/img/icons/*.svg',
   ], {

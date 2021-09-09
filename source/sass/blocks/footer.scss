@@ -449,6 +449,11 @@
   margin-left: auto;
   text-align: right;
 
+  &:hover,
+  &:focus {
+    color: $blue;
+  }
+
   @media (max-width: $tablet-width-max) {
     order: 9;
     grid-column: 3 / 5;
