@@ -78,6 +78,7 @@
   const inputQuestionPopup = document.querySelector('.popup-callback textarea');
   const buttonSubmitPopup = document.querySelector('.popup-callback button[type="submit"]');
   const body = document.querySelector('.body');
+  const popupTabLoopers = document.querySelectorAll('.popup-callback__looper');
 
 
   buttonOpenModal.addEventListener('click', () => {
@@ -139,6 +140,12 @@
     }
   });
 
+  for (let looper of popupTabLoopers) {
+    looper.addEventListener('focus', () => {
+      closePopupCallback.focus();
+    });
+  }
+
   // localStorage для блока .feedback-form
 
   const inputNameFeedback = document.querySelector('.feedback-form input[type="text"]');
@@ -173,7 +180,4 @@
       }
     }
   });
-
-  //
-
 })();
