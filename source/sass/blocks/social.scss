@@ -2,8 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: max-content;
-  max-width: 100%;
+  // width: max-content;
+  // max-width: 100%;
   padding: 0;
   gap: 14px;
 
@@ -24,21 +24,15 @@
   background-size: 27px;
   border-radius: 50%;
 
-  &--fb {
-    background-image: url("../img/icon-facebook.svg");
-  }
-
-  &--ok {
-    background-image: url("../img/icon-odnoklassniki.svg");
-  }
-
-  &--vk {
-    background-image: url("../img/icon-vk.svg");
+  svg {
+    fill: $grey-five;
   }
 
   &:hover,
-  &:active {
-    background-color: $cyan; // позволительна ли отсебятина?
+  &:focus {
+    svg {
+      fill: $cyan;
+    }
   }
 
   &:active {

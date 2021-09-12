@@ -1,16 +1,17 @@
 .header {
+  overflow: hidden;
   color: $white;
   background-color: $blue;
   background-image:
-    url("../img/circuit-boards.png"),
+    // url("../img/circuit-boards.png"),
     url("../img/triangle.svg"),
     url("../img/back-header-tablet.png");
   background-size:
-    705px 515px,
+    // 705px 515px,
     671px 641px,
     cover;
   background-position:
-    calc(50% + 430px) 258px,
+    // calc(50% + 430px) 258px,
     calc(50% + 405px) 118px,
     center;
   background-repeat: no-repeat;
@@ -18,30 +19,30 @@
   // проклятый LightHouse, заставляет идти на такие извращения в 3 часа ночи
   @supports (
     background-image:
-      url("../img/circuit-boards.webp"),
+      // url("../img/circuit-boards.webp"),
       url("../img/triangle.svg"),
       url("../img/back-header-tablet.webp")
   ) {
     background-image:
-      url("../img/circuit-boards.webp"),
+      // url("../img/circuit-boards.webp"),
       url("../img/triangle.svg"),
       url("../img/back-header-tablet.webp");
   }
 
   @media (min-resolution: 2dppx) {
     background-image:
-      url("../img/circuit-boards@2x.png"),
+      // url("../img/circuit-boards@2x.png"),
       url("../img/triangle.svg"),
       url("../img/back-header-tablet@2x.png");
 
     @supports (
       background-image:
-        url("../img/circuit-boards@2x.webp"),
+        // url("../img/circuit-boards@2x.webp"),
         url("../img/triangle.svg"),
         url("../img/back-header-tablet@2x.webp")
     ) {
       background-image:
-        url("../img/circuit-boards@2x.webp"),
+        // url("../img/circuit-boards@2x.webp"),
         url("../img/triangle.svg"),
         url("../img/back-header-tablet@2x.webp");
     }
@@ -49,22 +50,22 @@
 
   @media (max-width: $tablet-width-max) {
     background-position:
-      calc(50% + 358px) 113px,
+      // calc(50% + 358px) 113px,
       calc(50% + 320px) -39px,
       calc(50% + 130px) calc(50% - 62px); // pixel-perfect который занял 45 минут О_о
     background-size:
-      465px 340px,
+      // 465px 340px,
       534px 505px,
       auto 145%; // я думал это займет минут 10 а не час
   }
 
   @media (max-width: $mobile-width-max) {
     background-size:
-      301px 220px,
+      // 301px 220px,
       507px 483px,
       auto 145%;
     background-position:
-      calc(50% + 16px) 92px,
+      // calc(50% + 16px) 92px,
       calc(50% + 245px) -46px,
       calc(50% + 130px) calc(50% - 62px);
   }

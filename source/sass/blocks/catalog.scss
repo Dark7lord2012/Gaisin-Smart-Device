@@ -258,6 +258,8 @@
 
   @media (max-width: $mobile-width-max) {
     max-height: none;
-    padding-bottom: 53.75%;
+    // padding-bottom: 53.75%;
+    padding-bottom: 0;
+    height: 256px;
   }
 }

@@ -3,10 +3,12 @@
 (() => {
   // Aккoрдеон в футере
 
-  let buttonsCollapse = document.querySelectorAll('.footer__button-collapse');
+  const buttonsCollapse = document.querySelectorAll('.footer__button-collapse');
 
   for (let button of buttonsCollapse) {
     button.classList.remove('footer__button-collapse--no-js');
+    const box = $(button).parent()[0];
+    let title = box.querySelector('.footer__button-collapse + h2');
 
     button.addEventListener('click', (evt) =>{
       if (evt.target.classList.contains('footer__button-collapse--closed')) {
@@ -16,6 +18,17 @@
         evt.target.classList.remove('footer__button-collapse--closed');
       } else {
         evt.target.classList.add('footer__button-collapse--closed');
+      }
+    });
+
+    title.addEventListener('click', () =>{
+      if (button.classList.contains('footer__button-collapse--closed')) {
+        for (let btn of buttonsCollapse) {
+          btn.classList.add('footer__button-collapse--closed');
+        }
+        button.classList.remove('footer__button-collapse--closed');
+      } else {
+        button.classList.add('footer__button-collapse--closed');
       }
     });
   }

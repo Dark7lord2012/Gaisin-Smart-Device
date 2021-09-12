@@ -1,4 +1,5 @@
 .feedback-form {
+  position: relative;
   padding-top: 91px;
   padding-bottom: 115px;
 
@@ -6,22 +7,18 @@
 
   background-color: $cyan;
   background-image:
-    url("../img/paper-plane.png"),
     url("../img/triangle-2.svg"),
     url("../img/triangles-ninja.svg");
   background-repeat: no-repeat;
   background-position:
-    calc(100% - 1059px) 161px,
     175px -60px,
     calc(100% + 147px) 36px;
   background-size:
-    511px 288px,
     670px 641px,
     510px 670px;
 
   @media (min-resolution: 2dppx) {
     background-image:
-      url("../img/paper-plane@2x.png"),
       url("../img/triangle-2.svg"),
       url("../img/triangles-ninja.svg");
   }
@@ -52,6 +49,7 @@
 }
 
 .feedback-form fieldset {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -86,9 +84,27 @@
   line-height: 52px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
 
+  // Сначала задавал филдсету, но при изменении ширины страница крашилась фатально
+  &::before {
+    position: absolute;
+    top: 70px;
+    left: -622px;
+    content: "";
+    width: 511px;
+    height: 288px;
+    background-image: url("../img/paper-plane.png");
+    background-size: 511px 288px;
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+
   @media (max-width: $tablet-width-max) {
     font-size: 32px;
     line-height: 45px;
+
+    &::before {
+      display: none;
+    }
   }
 
   @media (max-width: $mobile-width-max) {

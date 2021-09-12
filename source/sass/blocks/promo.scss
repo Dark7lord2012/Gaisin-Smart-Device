@@ -1,28 +1,21 @@
 .promo__wrapper {
   max-width: $desktop-width-max + 50px;
-  padding-top: 197px;
-  padding-left: 19px;
-  padding-right: 19px;
-  padding-bottom: 90px;
+  padding: 197px 19px 90px;
   margin: 0 auto;
   box-sizing: border-box;
 
   @media (max-width: $tablet-width-max) {
-    padding-top: 98px;
-    padding-left: 88px;
-    padding-right: 88px;
-    padding-bottom: 165px;
+    padding: 96px 88px 165px;
   }
 
   @media (max-width: $mobile-width-max) {
-    padding-top: 214px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 70px;
+    padding: 214px 15px 70px;
   }
 }
 
 .promo h1 {
+  position: relative;
+  max-width: 718px;
   margin-top: 0;
   margin-bottom: 28px;
 
@@ -33,19 +26,50 @@
   font-family: "Roboto Condensed", "Arial", sans-serif;
   letter-spacing: 0.07em;
 
+  &::before {
+    position: absolute;
+    top: -57px;
+    right: -775px;
+    width: 705px;
+    height: 515px;
+    background-image: url("../img/circuit-boards.png");
+    background-size: 705px 515px;
+    background-repeat: no-repeat;
+    background-position: center;
+    content: "";
+  }
+
   @media (max-width: $tablet-width-max) {
     max-width: 470px;
     margin-bottom: 29px;
 
     font-size: 60px;
     line-height: 70px;
+
+    &::before {
+      top: -77px;
+      right: -417px;
+      width: 465px;
+      height: 340px;
+      background-size: 465px 340px;
+    }
   }
 
   @media (max-width: $mobile-width-max) {
+    z-index: 1;
     max-width: 100%;
     margin-bottom: 27.5px;
     font-size: 40px;
     line-height: 47px;
+
+    &::before {
+      z-index: -1;
+      top: -194px;
+      right: -22px;
+      width: 301px;
+      height: 220px;
+      background-size: 301px 220px;
+    }
   }
 }
 
